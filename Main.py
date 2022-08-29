@@ -47,7 +47,7 @@ class DoublyCircularLinkedList:
             return self.add_at_tail(data)
         
         new = Node(data)
-        curr_node = head
+        curr_node = self.head
         for ind in range(index + 1):
             curr_node = curr_node.next
         
@@ -62,7 +62,7 @@ class DoublyCircularLinkedList:
     def get(self, index) -> int:
         if index < 0 or index >= self.count:
             return -1
-        curr_node = head
+        curr_node = self.head
         for ind in range(index + 1):
             curr_node = curr_node.next
         return curr_node.data
@@ -86,7 +86,7 @@ class DoublyCircularLinkedList:
             self.count -= 1
             return True
         
-        curr_node = head
+        curr_node = self.head
         for ind in range(index + 1):
             curr_node = curr_node.next
         curr_node.previous.next = curr_node.next
@@ -98,7 +98,7 @@ class DoublyCircularLinkedList:
     def get_previous_next(self, index) -> list:
         if index < 0 or index >= self.count:
             return -1
-        curr_node = head
+        curr_node = self.head
         for ind in range(index + 1):
             curr_node = curr_node.next
         return [curr_node.previous.data, curr_node.next.data]
