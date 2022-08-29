@@ -39,7 +39,7 @@ class DoublyCircularLinkedList:
         
         
     def add_at_index(self, index, data) -> bool:
-        if index < 0 or index > self.count:
+        if index < 0 or index >= self.count:
             return False
         if index == 0:
             return self.add_at_head(data)
