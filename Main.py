@@ -54,7 +54,7 @@ class DoublyCircularLinkedList:
         new.previous = curr_node.previous
         new.next = curr_node
         curr_node.previous.next = new
-        curr_node.previous = new
+        curr_node.next.previous = new
         self.count += 1
         return True
         
