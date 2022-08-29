@@ -1,4 +1,9 @@
 class Node:
+    """A class implementing Node objects
+    Attributes:
+        data     -> data held by the node
+        previous -> link to the previous node
+        next     -> link to the next node"""
     def __init__(self, data=None):
         self.data = data
         self.previous = self
@@ -6,12 +11,25 @@ class Node:
 
 
 class DoublyCircularLinkedList:
+    """A class implementing Node objects
+    Attributes:
+        head   -> data held by the node
+        tail   -> link to the previous node
+        count  -> link to the next node
+    Methods:
+        add_at_tail
+        add_at_head
+        add_at_index
+        get
+        delete_at_index
+        get_previous_next"""
     def __init__(self):
         self.head = None
-        self.count = 0
         self.tail = None
+        self.count = 0
 
     def add_at_tail(self, data) -> bool:
+        """Adds a node containing the provided data to the end of the linked list"""
         new = Node(data)
         if self.count > 0:
             new.previous = self.tail
@@ -25,6 +43,7 @@ class DoublyCircularLinkedList:
         return True
 
     def add_at_head(self, data) -> bool:
+        """Adds a node containing the provided data to the front of the linked list"""
         new = Node(data)
         if self.count > 0:
             new.next = self.head
@@ -39,6 +58,7 @@ class DoublyCircularLinkedList:
         
         
     def add_at_index(self, index, data) -> bool:
+        """Inserts a node containing given data at the given index of the linked list"""
         if index < 0 or index >= self.count:
             return False
         if index == 0:
@@ -60,6 +80,7 @@ class DoublyCircularLinkedList:
         
 
     def get(self, index) -> int:
+        """Returns the value held by the node at the given index of the linked list"""
         if index < 0 or index >= self.count:
             return -1
         curr_node = self.head
@@ -69,6 +90,7 @@ class DoublyCircularLinkedList:
         
 
     def delete_at_index(self, index) -> bool:
+        """Removes a node at the given index of the linked list"""
         if index < 0 or index >= self.count:
             return False
         if index == 0:
@@ -96,6 +118,8 @@ class DoublyCircularLinkedList:
         
 
     def get_previous_next(self, index) -> list:
+        """Returns a list containing the data held by the nodes at index - 1 and index + 1
+           Returns -1 if the index is invalid"""
         if index < 0 or index >= self.count:
             return -1
         curr_node = self.head
