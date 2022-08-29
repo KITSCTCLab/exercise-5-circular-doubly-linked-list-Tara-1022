@@ -15,9 +15,9 @@ class DoublyCircularLinkedList:
         new = Node(data)
         if self.count > 0:
             new.previous = self.tail
-            new.next = self.head
             self.tail.next = new
             self.head.previous = new
+            new.next = self.head
         else:
             self.head = new
         self.tail = new
@@ -54,7 +54,7 @@ class DoublyCircularLinkedList:
         new.previous = curr_node.previous
         new.next = curr_node
         curr_node.previous.next = new
-        curr_node.next.previous = new
+        curr_node.previous = new
         self.count += 1
         return True
         
