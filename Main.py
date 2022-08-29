@@ -21,6 +21,7 @@ class DoublyCircularLinkedList:
             new.prev = self.tail
             self.tail = new
         self.count += 1
+        return True
 
     def add_at_head(self, data) -> bool:
         new = Node(data)
@@ -32,6 +33,7 @@ class DoublyCircularLinkedList:
             self.head.prev = new
             self.head = new
         self.count += 1
+        return True
 
     def add_at_index(self, index, data) -> bool:
         if not 0 <= index <= (self.count - 1):
@@ -60,7 +62,7 @@ class DoublyCircularLinkedList:
         curr_node = self.head
         for ind in range(index):
             curr_node = self.head.next
-         return curr_node.data
+        return curr_node.data
 
     def delete_at_index(self, index) -> bool:
         if not 0 <= index <= (self.count - 1):
@@ -77,14 +79,14 @@ class DoublyCircularLinkedList:
 
     def get_previous_next(self, index) -> list:
         if not 0 <= index <= (self.count - 2):
-            return -1
+            return [-1]
         curr_node = self.head
         for ind in range(index):
             curr_node = self.head.next
-         return [curr_node.prev.data, curr_node.next.data]
+        return [curr_node.prev.data, curr_node.next.data]
 
 
-# Do not change the following code
+# Do not chantge the following code
 operations = []
 for specific_operation in input().split(','):
     operations.append(specific_operation.strip())
