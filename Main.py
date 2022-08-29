@@ -1,8 +1,8 @@
 class Node:
     def __init__(self, data=None):
         self.data = data
-        self.previous = None
-        self.next = None
+        self.previous = self
+        self.next = self
 
 
 class DoublyCircularLinkedList:
@@ -13,20 +13,26 @@ class DoublyCircularLinkedList:
 
     def add_at_tail(self, data) -> bool:
         new = Node(data)
-        new.previous = self.tail
-        new.next = self.head
-        self.tail.next = new
-        self.head.previous = new
+        if self.count > 0:
+            new.previous = self.tail
+            new.next = self.head
+            self.tail.next = new
+            self.head.previous = new
+        else:
+            self.head = new
         self.tail = new
         self.count += 1
         return True
 
     def add_at_head(self, data) -> bool:
         new = Node(data)
-        new.next = self.head
-        new.previous = self.tail
-        self.head.previous = new
-        self.tail.next = new
+        if self.count > 0:
+            new.next = self.head
+            new.previous = self.tail
+            self.head.previous = new
+            self.tail.next = new
+        else:
+            self.tail = new
         self.head = new
         self.count += 1
         return True
