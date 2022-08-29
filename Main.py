@@ -18,7 +18,7 @@ class DoublyCircularLinkedList:
             self.head = new
         else:
             self.tail.next = new
-            new.prev = self.tail
+            new.previous = self.tail
             self.tail = new
         self.count += 1
         return True
@@ -30,7 +30,7 @@ class DoublyCircularLinkedList:
             self.head = new
         else:
             new.next = self.head
-            self.head.prev = new
+            self.head.previous = new
             self.head = new
         self.count += 1
         return True
@@ -45,9 +45,9 @@ class DoublyCircularLinkedList:
             
         new = Node(data)
         new.next = curr_node
-        new.prev = curr_node.prev
-        curr_node.prev.next = new
-        curr_node.prev = new
+        new.previous = curr_node.previous
+        curr_node.previous.next = new
+        curr_node.previous = new
         
         if index == 0:
             self.head = new
@@ -72,8 +72,8 @@ class DoublyCircularLinkedList:
         for ind in range(index):
             curr_node = self.head.next
             
-        curr_node.next.prev = curr_node
-        curr_node.prev.next = curr_node
+        curr_node.next.previous = curr_node
+        curr_node.previous.next = curr_node
         self.count -= 1
         return True
 
@@ -83,7 +83,7 @@ class DoublyCircularLinkedList:
         curr_node = self.head
         for ind in range(index):
             curr_node = self.head.next
-        return [curr_node.prev.data, curr_node.next.data]
+        return [curr_node.previous.data, curr_node.next.data]
 
 
 # Do not chantge the following code
