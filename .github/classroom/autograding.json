@@ -1,0 +1,104 @@
+{
+  "tests": [
+    {
+      "name": "Test 1",
+      "setup": "",
+      "run": "python3 Main.py",
+      "input": "add_at_head, add_at_tail, add_at_index, get, delete_at_index, get, get_previous_next\r\n10, 3, [1,2], 1, 1, 1, 1",
+      "output": "[True, True, True, 2, True, 3, [10, 10]]",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 3
+    },
+    {
+      "name": "Test 2",
+      "setup": "",
+      "run": "python3 Main.py",
+      "input": "delete_at_index\r\n1",
+      "output": "[False]",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 3
+    },
+    {
+      "name": "Test 3",
+      "setup": "",
+      "run": "python3 Main.py",
+      "input": "add_at_index\r\n[1,2]",
+      "output": "[False]",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 3
+    },
+    {
+      "name": "Test 4",
+      "setup": "",
+      "run": "python3 Main.py",
+      "input": "delete_at_index\r\n0",
+      "output": "[False]",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 3
+    },
+    {
+      "name": "Test 5",
+      "setup": "",
+      "run": "python3 Main.py",
+      "input": "add_at_index, get, delete_at_index, get\r\n[10,0], 0, 0, 0",
+      "output": "[False, -1, False, -1]",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 3
+    },
+    {
+      "name": "Test 6",
+      "setup": "",
+      "run": "python3 Main.py",
+      "input": "add_at_head, add_at_index, get, get\r\n10, [0,7], 0, 1",
+      "output": "[True, True, 7, 10]",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 3
+    },
+    {
+      "name": "Test 7",
+      "setup": "",
+      "run": "python3 Main.py",
+      "input": "add_at_head, add_at_index, get, get_previous_next\r\n10, [0,7], 0, 0",
+      "output": "[True, True, 7, [10, 10]]",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 3
+    },
+    {
+      "name": "Test 8",
+      "setup": "",
+      "run": "python3 Main.py",
+      "input": "add_at_head, add_at_tail, add_at_index, add_at_index, add_at_index, add_at_index, get, get, get, get, get, get\r\n5, 10, [1,16], [2,7], [3,18], [4,9], 0, 1, 2, 3, 4, 5",
+      "output": "[True, True, True, True, True, True, 5, 16, 7, 18, 9, 10]",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 3
+    },
+    {
+      "name": "Test 9",
+      "setup": "",
+      "run": "python3 Main.py",
+      "input": "add_at_head, add_at_tail, add_at_index, add_at_index, add_at_index, add_at_index, get, get, get, get, get, get, get_previous_next\r\n5, 10, [1,16], [2,7], [3,18], [4,9], 0, 1, 2, 3, 4, 5, 4",
+      "output": "[True, True, True, True, True, True, 5, 16, 7, 18, 9, 10, [18, 10]]",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 3
+    },
+    {
+      "name": "Test 10",
+      "setup": "",
+      "run": "python3 Main.py",
+      "input": "add_at_index, get, get\r\n[3,18], 0, 1",
+      "output": "[False, -1, -1]",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 3
+    }
+  ]
+}
